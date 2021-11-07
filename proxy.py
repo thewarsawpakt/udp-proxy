@@ -6,7 +6,6 @@ import time
 BUFFER_SIZE = 2048
 BOUND_SERVER_ADDR = ("127.0.0.1", 9090)
 
-connection_queue = queue.Queue()
 packet_queue = queue.Queue()
 
 def serve(addr = ("127.0.0.1", 8080)):
