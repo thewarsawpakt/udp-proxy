@@ -28,11 +28,7 @@ def send(data):
 
 def handle():
     while True:
-        try:
-            send(packet_queue.get())
-
-        except queue.Empty:
-            time.sleep(0.25) # wait for a bit so that we aren't polling instantly, this will probably introduce latency.
+        send(packet_queue.get(block=True))
 
 tasks = []
 
